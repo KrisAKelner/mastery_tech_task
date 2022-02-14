@@ -3,26 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/LoginFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.masterytechtask.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/LoginFragment"
+        android:name="com.example.masterytechtask.view.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_LoginFragment_to_DriverListFragment"
+            app:destination="@id/DriverListFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.masterytechtask.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/DriverListFragment"
+        android:name="com.example.masterytechtask.view.DriverListFragment"
+        android:label="@string/driver_list_fragment_label"
+        tools:layout="@layout/fragment_driver_list">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_DriverListFragment_to_driverDetailsFragment"
+            app:destination="@id/driverDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/driverDetailsFragment"
+        android:name="com.example.masterytechtask.view.DriverDetailsFragment"
+        android:label="DriverDetailsFragment" >
+        <argument
+            android:name="driver"
+            app:argType="com.example.masterytechtask.model.Driver" />
     </fragment>
 </navigation>
